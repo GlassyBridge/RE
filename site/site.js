@@ -18,7 +18,7 @@ function glitchSwap() {
 
 setInterval(glitchSwap, 10000);
 
-const faqBtn = document.querySelector('a');
+const faqBtn = document.querySelector('#FAQ');
 const faqModal = document.getElementById('faq-modal');
 const closeBtn = document.getElementById('close-faq');
 

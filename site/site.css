@@ -5,12 +5,6 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
     font-family: 'Courier New', Courier, monospace;
     background-color: #010212; 
 
@@ -18,6 +12,17 @@ body {
         linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-size: 40px 40px;
+}
+
+#hack-club {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 101;
+}
+
+#hack-club img {
+    width: 250px;
 }
 
 .top-nav {
@@ -40,7 +45,7 @@ body {
 .nav-item {
     color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 12pt;
     font-weight: bold;
     letter-spacing: 3px;
     position: relative;
@@ -61,32 +66,14 @@ body {
 
 .nav-item:hover::before {
     content: '[';
-    left: -15px;
+    left: -15pt;
     opacity: 1;
 }
 
 .nav-item:hover::after {
     content: ']';
-    right: -15px;
+    right: -15pt;
     opacity: 1;
-}
-
-.system-status {
-    color: #27ae60;
-    font-size: 0.75rem;
-    font-family: monospace;
-    opacity: 0.8;
-}
-
-.system-status::before {
-    content: '●';
-    margin-right: 8px;
-    animation: blink 2s infinite;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
 }
 
 .folder-wrapper {
