@@ -30,9 +30,9 @@ canvas.height = (ww * 0.5625) / 3;
 const w = canvas.width;
 const h = canvas.height;
 
-// 1. PRE-LOAD MASK (Ready for later)
+// Load mask image
 const img = new Image();
-img.src = 'imgs/WIP.png'; 
+img.src = 'imgs/wip.png'; 
 img.onload = () => {
     const tCanvas = document.createElement('canvas');
     tCanvas.width = w; tCanvas.height = h;
@@ -91,7 +91,6 @@ window.addEventListener('keydown', (e) => {
         e.preventDefault();
         isMenuVisible = !isMenuVisible;
         menu.style.display = isMenuVisible ? 'block' : 'none';
-        // text.style.display = isMenuVisible ? 'block' : 'none';
         return;
     }
 

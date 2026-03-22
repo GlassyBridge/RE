@@ -16,7 +16,7 @@ function glitchSwap() {
     }, 40);
 }
 
-setInterval(glitchSwap, 10000);
+setInterval(glitchSwap, 3000);
 
 const faqBtn = document.querySelector('#FAQ');
 const faqModal = document.getElementById('faq-modal');
