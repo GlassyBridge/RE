@@ -1,0 +1,288 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #010212; 
+
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-item {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #fff;
+}
+
+.nav-item::before, .nav-item::after {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    transition: all 0.2s ease;
+    color: #e74c3c;
+}
+
+.nav-item:hover::before {
+    content: '[';
+    left: -15px;
+    opacity: 1;
+}
+
+.nav-item:hover::after {
+    content: ']';
+    right: -15px;
+    opacity: 1;
+}
+
+.system-status {
+    color: #27ae60;
+    font-size: 0.75rem;
+    font-family: monospace;
+    opacity: 0.8;
+}
+
+.system-status::before {
+    content: '●';
+    margin-right: 8px;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.folder-wrapper {
+    position: absolute;
+    bottom: -45%;
+    left: -10%;
+    width: 99vw;
+    max-width: 1250px;
+    height: auto;
+}
+
+.folder-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(20px 20px 50px rgba(0,0,0,0.5));
+}
+
+.redacted-stamp {
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    
+    display: inline-block;
+    padding: 0 1.5%;
+    
+    font-family: 'Saira Stencil One', system-ui;
+    font-size: 9vw;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #e74c3c;
+    border: solid 2vw #e74c3c;
+    
+    transform: rotate(-15deg);
+    opacity: 0.95;
+    z-index: 5;
+}
+
+.paper {
+    position: absolute;
+    bottom: 35%;
+    right: 5%;
+    
+    width: 40%;
+    background: #fff;
+    padding: 3%;
+    border-radius: 5px;
+    border: solid 0.3vw #909090;
+    transform: rotate(5deg);
+    z-index: 4;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+.tagline {
+    width: 100%;
+    margin: 0 0 1.5vw 0;
+    font-size: 1.1vw;
+    line-height: 1.4;
+    color: #333;
+}
+
+.rsvp-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.sig-line {
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 1.3vw;
+    color: #1a1a1a;
+    outline: none;
+    border-bottom: solid 2px #1a1a1a;
+    flex-grow: 1;
+}
+
+.rsvp-btn {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 0.8vw 1.5vw;
+    font-size: 1vw;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.rsvp-btn:hover {
+    background: #333;
+}
+
+.rsvp-btn:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .tagline { font-size: 3vw; }
+    .sig-line { font-size: 3.5vw; }
+    .rsvp-btn { font-size: 3vw; padding: 2vw 4vw; }
+}
+
+/*----------------------------------------------------------*/
+
+.faq-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    backdrop-filter: blur(5px);
+}
+
+.faq-card {
+    width: 600px;
+    max-height: 80vh;
+    background: #ffffff;
+    border: 5px solid #909090;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0,0,0,1);
+}
+
+.faq-top {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #100933;
+}
+
+.faq-top h1 {
+    font-size: 1.2rem;
+    color: #000000;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: 'Saira Stencil One', sans-serif;
+}
+
+.questions-container {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.q-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.q-header {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #000000;
+    padding: 15px;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.q-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 15px;
+    color: rgba(19, 19, 19, 0.7);
+    font-size: 0.9rem;
+}
+
+.q-item.open .q-answer {
+    max-height: 200px;
+    padding-bottom: 15px;
+}
+
+.q-item.open .arrow {
+    transform: rotate(180deg);
+}

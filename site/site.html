@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE:DACTED</title>
+    <link rel="stylesheet" href="site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="system-status">STATUS: ENCRYPTED</div>
+
+        <div class="nav-links">
+            <a href="#" class="nav-item">FAQ</a>
+            <a href="#" class="nav-item" onclick="alert('sign-ups not available yet')">SIGNUP</a>
+        </div>
+    </nav>
+
+    <div class="folder-wrapper">
+        <img src="imgs/folder.png" class="folder-img" alt="Dossier Folder">
+
+        <div class="redacted-stamp">RE:DACTED</div>
+
+        <div class="paper">
+            <p class="tagline">Every <span class="ware">hardware</span> has a secret. Your job is to find and modify it.</p>
+            
+            <form class="rsvp-row" id="rsvp-form">
+                <input type="text" class="sig-line" placeholder="Agent@hackclub.com" required autocomplete="off">
+                <button type="submit" class="rsvp-btn" onclick="alert('RSVP not available yet')">RSVP</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="faq-modal" class="faq-overlay">
+        <div class="faq-card">
+            <div class="faq-top">
+                <h1>FREQUENTLY ASKED QUESTIONS</h1>
+                <button id="close-faq" class="close-btn">X</button>
+            </div>
+            
+            <div class="questions-container">
+                <div class="q-item">
+                    <button class="q-header">What is this YSWS about? <span class="arrow">▼</span></button>
+                    <div class="q-answer">
+                        <p>This YSWS is concerned about Reverse Engineering where students explore how a software works and potentially modify it.
+                            It could also involve hardware reverse engineering.</p>
+                    </div>
+                </div>
+
+                <div class="q-item">
+                    <button class="q-header">I don't have any experience in reverse engineering. Is that okay? <span class="arrow">▼</span></button>
+                    <div class="q-answer">
+                        <p>Ofcourse! This YSWS is designed so that we can learn through this together. You'll have the opportunity to ask questions and get help along the way.
+                            We also plan to provide resources and guides to help you get started with reverse engineering.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="q-item">
+                    <button class="q-header">I want to reverse engineer hardware but I don't have the necessary tools.<span class="arrow">▼</span></button>
+                    <div class="q-answer">
+                        <p>No worries! You can get started by working on software reverse engineering projects that don't require specialized hardware tools. Once you ship projects based on what you've learned, you can earn coins to buy the necessary tools to explore hardware reverse engineering in the future.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="q-item">
+                    <button class="q-header">Who can submit? <span class="arrow">▼</span></button>
+                    <div class="q-answer">
+                        <p>YSWS is open to all Hack Clubbers. All teenagers 18 and under, anywhere in the world can participate.</p>
+                    </div>
+                </div>
+
+                <div class="q-item">
+                    <button class="q-header">What are the requirements? <span class="arrow">▼</span></button>
+                    <div class="q-answer">
+                        <ul>
+                            <li>Open-source code on Github with regular commits.</li>
+                            <li>Accurately reflect hours and work spent.</li>
+                            <li>No fraud. We see everything.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="site.js"></script>
+</body>
+</html>
